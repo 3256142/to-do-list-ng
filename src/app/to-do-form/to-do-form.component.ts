@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToDosService } from '../to-dos.service';
 
 @Component({
   selector: 'app-to-do-form',
@@ -24,9 +25,13 @@ export class ToDoFormComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private toDoService: ToDosService) { }
 
   ngOnInit() {
+  }
+
+  addTask(){
+    this.toDoService.addTasks()
   }
 
 }
